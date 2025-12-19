@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ofpgs_ros</name>
+  <version>1.0.0</version>
+  <description>
+    Optimized ROS1 integration package for FoundationPose with Grounded SAM. Provides ROS1 wrapper nodes
+    for real-time 6D object pose estimation with open-vocabulary segmentation. Includes timestamp
+    synchronization and temporal filtering optimizations for Human Support Robot (HSR). 
+    FoundationPose and Grounded SAM are external dependencies.
+  </description>
+
+  <maintainer email="bishal.shrestha@miami.edu">Bishal Shrestha</maintainer>
+  <author email="bishal.shrestha@miami.edu">Bishal Shrestha</author>
+
+  <license>MIT</license>
+
+  <url type="website">https://github.com/OfficialBishal/ofpgs_ros</url>
+  <url type="repository">https://github.com/OfficialBishal/ofpgs_ros</url>
+  <url type="bugtracker">https://github.com/OfficialBishal/ofpgs_ros/issues</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Core ROS dependencies -->
+  <depend>rospy</depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>visualization_msgs</depend>
+
+  <!-- Image processing -->
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+  <depend>message_filters</depend>
+
+  <!-- TF -->
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
+
+  <!-- Navigation (optional, for robot movement) -->
+  <exec_depend>actionlib</exec_depend>
+  <exec_depend>move_base_msgs</exec_depend>
+
+  <export>
+    <!-- ROS wiki documentation -->
+  </export>
+</package>

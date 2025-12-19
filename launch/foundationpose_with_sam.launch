@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- FoundationPose + SAM Segmentation Pipeline -->
+  <!-- Uses YOLO for object detection + SAM for mask generation -->
+  
+  <!-- SAM Segmentation Node -->
+  <node name="sam_segmentation" 
+        pkg="ofpgs_ros" 
+        type="run_sam_segmentation.sh" 
+        output="screen">
+    <rosparam file="$(find ofpgs_ros)/config/foundationpose_config.yaml" command="load" />
+    <env name="CONDA_DEFAULT_ENV" value="sam" />
+  </node>
+  
+  <!-- FoundationPose Pose Estimation Node -->
+  <node name="foundationpose_pose_estimation" 
+        pkg="ofpgs_ros" 
+        type="run_foundationpose.sh" 
+        output="screen">
+    <rosparam file="$(find ofpgs_ros)/config/foundationpose_config.yaml" command="load" />
+    <env name="CONDA_DEFAULT_ENV" value="foundationpose" />
+  </node>
+</launch>

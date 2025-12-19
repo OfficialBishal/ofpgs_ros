@@ -1,0 +1,83 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ROS
+devel/
+build/
+install/
+.catkin_workspace
+.rosinstall
+.rosinstall.bak
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Debug files
+debug/
+*.log
+*.ply
+*.png
+!recordings/*.png
+!docs/**/*.png
+
+# Metrics data (generated)
+metrics/data/*.json
+metrics/data/*.csv
+metrics/plots/*.png
+
+# LaTeX
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.synctex(busy)
+*.log
+*.bbl
+*.blg
+*.out
+*.nav
+*.snm
+*.toc
+*.vrb
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+
+# Conda
+.conda/
+
+# Large files (if not needed in repo)
+# Uncomment if you want to exclude large mesh files
+# meshes/**/*.obj
+# meshes/**/*.ply
+# meshes/**/*.stl
+
+# Videos (keep fast versions, ignore if too large)
+# recordings/*.mp4
+

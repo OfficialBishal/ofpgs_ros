@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- FoundationPose Pose Estimation Only -->
+  <!-- Use this when you have an external segmentation source -->
+  
+  <!-- Arguments (override config file values) -->
+  <arg name="use_mask" default="false" />
+  <arg name="mask_topic" default="" />
+  
+  <!-- FoundationPose Pose Estimation Node -->
+  <node name="foundationpose_pose_estimation" 
+        pkg="ofpgs_ros" 
+        type="run_foundationpose.sh" 
+        output="screen">
+    <rosparam file="$(find ofpgs_ros)/config/foundationpose_config.yaml" command="load" />
+    <param name="mask/use_mask" value="$(arg use_mask)" />
+    <param name="mask/mask_topic" value="$(arg mask_topic)" />
+    <env name="CONDA_DEFAULT_ENV" value="foundationpose" />
+  </node>
+</launch>

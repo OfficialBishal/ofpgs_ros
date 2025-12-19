@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- FoundationPose + Grounded SAM Pipeline -->
+  <!-- Uses Grounding DINO for open-vocabulary detection + SAM for mask generation -->
+  
+  <!-- Grounded SAM Segmentation Node -->
+  <node name="grounded_sam_segmentation" 
+        pkg="ofpgs_ros" 
+        type="run_grounded_sam_segmentation.sh" 
+        output="screen">
+    <rosparam file="$(find ofpgs_ros)/config/foundationpose_config.yaml" command="load" />
+    <env name="CONDA_DEFAULT_ENV" value="grounded_sam" />
+  </node>
+  
+  <!-- FoundationPose Pose Estimation Node -->
+  <node name="foundationpose_pose_estimation" 
+        pkg="ofpgs_ros" 
+        type="run_foundationpose.sh" 
+        output="screen">
+    <rosparam file="$(find ofpgs_ros)/config/foundationpose_config.yaml" command="load" />
+    <env name="CONDA_DEFAULT_ENV" value="foundationpose" />
+  </node>
+</launch>
